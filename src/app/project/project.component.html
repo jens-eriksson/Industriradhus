@@ -31,6 +31,7 @@
       <h5>Två  typer  av  enheter</h5>
       <p class="card-text">På  Hedensbyns  företagspark  kommer  det  gå  att  beställa  två  olika  typer  av  industriradhus.  En  mindre  modell  som  lämpar  sig  som  garage  eller  verkstad  och  en  större  modell  som  riktar  sig  till  dig  som  vill  ha  en  butikslokal  med  tillhörande  lager/kontor.  Alternativt  kombinera  ihop  både  en  butiksyta  med  ett  garage  eller  lagerlokal  i  anslutning  till  butiken.  Möjligheterna  är  många,  bara  att  bestämma  vilken  kombination  man  vill  ha.  </p>
       <br>
+      <div *ngIf='project.units'>
       <h3>Till salu</h3>
       <table class="table">
           <thead>
@@ -41,20 +42,20 @@
               <th scope="col">pris</th>
               <th scope="col">avgift</th>
               <th scope="col"></th>
-
             </tr>
           </thead>
           <tbody>
             <tr *ngFor='let unit of project.units' >
               <td><img src="{{'../../assets/' + unit.picture}}" width="50" /></td>
-              <th><a href="#">{{ unit.name }}</a></th>
+              <th><a [routerLink]="['/unit', unit.id]">{{ unit.name }}</a></th>
               <td> {{ unit.size }}</td>
               <td>{{ unit.price | currency:'SEK':'':'1.0-0' }} kr</td>
-              <td>{{ unit.rent | currency:'SEK':'':'1.0-0' }} kr</td>
+              <td>{{ unit.rent | currency:'SEK':'':'1.0-0' }} kr/mån</td>
               <td><span class="text-danger" *ngIf='unit.sold'>SÅLD</span></td>
             </tr>
           </tbody>
         </table>
+      </div>
     </div>
   </div>
 </div>

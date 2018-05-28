@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute} from '@angular/router';
 import { UnitService } from './../unit/unit.service';
 import { ProjectService } from './project.service';
 import { IProject } from './project';
@@ -10,13 +11,25 @@ import { IProject } from './project';
 })
 export class ProjectComponent implements OnInit {
 
+  projects: IProject[];
   project: IProject;
 
-  constructor(private _projectService: ProjectService, private _unitService: UnitService) {
+  constructor(private _projectService: ProjectService,
+              private _unitService: UnitService,
+              private _route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.project = this._projectService.getProjects()[0];
-    this.project.units = this._unitService.getUnits(this.project.id);
+    const id = this._route.snapshot.paramMap.get('id');
+    this._projectService.getProjects()
+          .subscribe(projects => {
+              this.projects = projects;
+              this.project = this.projects[0];
+              this._unitService.getUnits()
+                          .subscribe(units => {
+                            this.project.units = units;
+                          });
+            });
+
   }
 }
