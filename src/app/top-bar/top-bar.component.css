@@ -1,0 +1,10 @@
+a {
+    color: grey;
+}
+
+.navbar{
+    background-color: white;
+    border: solid;
+    border-width: 1px;
+    border-color: gainsboro;
+}
