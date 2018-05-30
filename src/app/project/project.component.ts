@@ -1,3 +1,4 @@
+import { UnitListComponent } from './../unit/unit-list.component';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { UnitService } from './../unit/unit.service';
@@ -25,10 +26,6 @@ export class ProjectComponent implements OnInit {
           .subscribe(projects => {
               this.projects = projects;
               this.project = this.projects[0];
-              this._unitService.getUnits()
-                          .subscribe(units => {
-                            this.project.units = units;
-                          });
             });
 
   }

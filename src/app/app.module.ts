@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProjectComponent } from './project/project.component';
 import { UnitComponent } from './unit/unit.component';
+import { UnitListComponent } from './unit/unit-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
     ProjectComponent,
-    UnitComponent
+    UnitComponent,
+    UnitListComponent
   ],
   imports: [
     BrowserModule,

@@ -10,8 +10,12 @@ export class UnitService {
   private _unitsUrl = '../../data/units.json';
   constructor(private _httpClient: HttpClient) { }
 
-  getUnits(): Observable<IUnit[]> {
+  getUnits(projectId: string): Observable<IUnit[]> {
     return this._httpClient.get<IUnit[]>(this._unitsUrl);
+  }
+
+  getUnit(id: string): Observable<IUnit> {
+    return this._httpClient.get<IUnit>(this._unitsUrl)[0];
   }
 
 }
