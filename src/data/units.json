@@ -5,7 +5,7 @@
   "name": "Enhet 1 - Butikslokal",
   "price": 5100000,
   "rent": 16000,
-  "picture": "butiksenhet.png",
+  "thumbnail": "butiksenhet.png",
   "size": 384,
   "sold": false
 },
@@ -15,7 +15,7 @@
   "name": "Enhet 2 - Butikslokal",
   "price": 5100000,
   "rent": 16000,
-  "picture": "butiksenhet.png",
+  "thumbnail": "butiksenhet.png",
   "size": 384,
   "sold": true
 },
@@ -25,7 +25,7 @@
   "name": "Enhet 8 - Lagerlokal",
   "price": 2550000,
   "rent": 8000,
-  "picture": "lagerenhet.png",
+  "thumbnail": "lagerenhet.png",
   "size": 192,
   "sold": true
 },
@@ -35,7 +35,7 @@
   "name": "Enhet 9 - Lagerlokal",
   "price": 2550000,
   "rent": 8000,
-  "picture": "lagerenhet.png",
+  "thumbnail": "lagerenhet.png",
   "size": 192,
   "sold": false
 }]
