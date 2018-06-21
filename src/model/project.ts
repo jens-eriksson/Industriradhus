@@ -1,9 +1,10 @@
-import { IUnit } from '../unit/unit';
+import { IUnit } from './unit';
 
 export interface IProject {
     id: string;
     name: string;
-    description: string;
+    mainDescription: string;
     units: IUnit[];
 }
+
 

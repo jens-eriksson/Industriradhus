@@ -1,6 +1,413 @@
-[{
-  "id": "hedensbyn",
-  "name": "Hedensbyns Företagspark",
-  "description": "",
-  "units": null
-}]
+[
+    {
+        "Id": "hedensbyn",
+        "Name": "Hedensbyns Företagspark",
+        "MainDescription": {
+            "Heading": "Hedensbyns Företagspark",
+            "Text": "Skellefteå  Kommun  har  som  ambition  att  skapa  en  stark  företagspark  på  Hedensbyn.  Där  ser  vi  att  industriradhus  borde  vara  en  självklar  del  av  en  sådan  park.  Vi  har  pratat  med  ett  antal  lokala  fastighetsmäklare  som  menar  att  efterfrågan  på  denna  form  av  lokaler  är  stor  redan  i  dagsläget.      Under  andra  halvåret  2018  siktar  Northvolt  på  att  ta  det  första  spadtaget  i  arbetet  med  att  skapa  Europas  största  produktionsanläggning  för  litiumjonbatterier  på  industriområdet  i  Hedensbyn.  Satsningen  väntas  ge  2000  till  2500  nya  arbetstillfällen  samt  skapa  många  affärsmöjligheter  för  underleverantörer.  Det  är  just  till  dessa  underleverantörer  och  mindre  bolagIndustriradhus  riktar  sig  mot.  För  att  bidra  till  utvecklingen  planeras  det  att  byggas  ett  Industriradhus  med  28  stycken  fack  som  riktar  sig  till  små  och  medelstora  företag  som  vill  etablera  sig  i  denna  framväxande  företagspark.",
+            "Size": 1
+        },
+        "Descriptions": [
+            {
+                "Heading": "Vad är industriradhus?",
+                "Text": "Industriradhus är en ny typ av lösning för små och medelstora företag som vill äga sina egna lokaler men som på egen hand inte vill investera i uppförandet av en större industribyggnad. Istället kan ett kluster av mindre företag gå samman och bygga en större lokal med enheter som upplåts som bostadsrätter. Det skapas även gemensamma ytor såsom lunchrum, gym, konferensrum etc",
+                "Size": 3
+            },
+            {
+                "Heading": "Två typer av enheter",
+                "Text": "På Hedensbyns företagspark kommer det gå att beställa två olika typer av industriradhus. En mindre modell som lämpar sig som garage eller verkstad och en större modell som riktar sig till dig som vill ha en butikslokal med tillhörande lager/kontor. Alternativt kombinera ihop både en butiksyta med ett garage eller lagerlokal i anslutning till butiken. Möjligheterna är många, bara att bestämma vilken kombination man vill ha.",
+                "Size": 3
+            }
+        ],
+        "Pictures": [
+            {
+                "FileName": "hedensbyn1.png"
+            },
+            {
+                "FileName": "hedensbyn2.png"
+            }
+        ],
+        "Units": [
+            {
+                "Id": "hedensbyn-01",
+                "ProjectId": "hedensbyn",
+                "Name": "Enhet 1 - Butikslokal",
+                "Price": 5100000,
+                "Rent": 16000,
+                "Thumbnail": "butiksenhet.png",
+                "Size": 384,
+                "Sold": false,
+                "SalesAgent": {
+                    "Id": "jorgen",
+                    "Name": "Jörgen Munter",
+                    "Description": "",
+                    "Email": "jorgen.munter@industriradhus.se",
+                    "Phone": "070-6665544",
+                    "Picture": {
+                        "FileName": "jorgen.png"
+                    }
+                },
+                "MainDescription": {
+                    "Heading": "Enhet 1 - Butikslokal",
+                    "Text": "Bla bla.",
+                    "Size": 1
+                },
+                "Descriptions": [
+                    {
+                        "Heading": "Beskrivning ett",
+                        "Text": "Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok. Lorem ipsum har inte bara överlevt fem århundraden, utan även övergången till elektronisk typografi utan större förändringar. Det blev allmänt känt på 1960-talet i samband med lanseringen av Letraset-ark med avsnitt av Lorem Ipsum, och senare med mjukvaror som Aldus PageMaker.",
+                        "Size": 3
+                    },
+                    {
+                        "Heading": "Beskrivning två",
+                        "Text": "Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok. Lorem ipsum har inte bara överlevt fem århundraden, utan även övergången till elektronisk typografi utan större förändringar. Det blev allmänt känt på 1960-talet i samband med lanseringen av Letraset-ark med avsnitt av Lorem Ipsum, och senare med mjukvaror som Aldus PageMaker.",
+                        "Size": 3
+                    }
+                ],
+                "CharacteristicsSections": [
+                    {
+                        "Heading": "Byggnad",
+                        "Characteristics": [
+                            {
+                                "Description": "Grund",
+                                "Text": "Betong"
+                            },
+                            {
+                                "Description": "Stomme",
+                                "Text": "Betong"
+                            },
+                            {
+                                "Description": "Bjälklag",
+                                "Text": "Betong"
+                            },
+                            {
+                                "Description": "Tak",
+                                "Text": "Plåt"
+                            },
+                            {
+                                "Description": "Fasad",
+                                "Text": "Plåt"
+                            },
+                            {
+                                "Description": "Ventilation",
+                                "Text": "Frånluft"
+                            },
+                            {
+                                "Description": "Fönstertyp",
+                                "Text": "Treglas"
+                            },
+                            {
+                                "Description": "VA",
+                                "Text": "Kommunalt vatten och avlopp"
+                            },
+                            {
+                                "Description": "Uppvärmning",
+                                "Text": "Bergvärme"
+                            }
+                        ]
+                    }
+                ],
+                "Pictures": [
+                    {
+                        "FileName": "unit-hedensbyn01-img01.png"
+                    },
+                    {
+                        "FileName": "unit-hedensbyn01-img02.png"
+                    },
+                    {
+                        "FileName": "unit-hedensbyn01-img03.png"
+                    },
+                    {
+                        "FileName": "unit-hedensbyn01-img04.png"
+                    }
+                ],
+                "GoogleMapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1702.582084811809!2d21.02675231660073!3d64.7415872728741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjTCsDQ0JzI5LjciTiAyMcKwMDEnNDQuMiJF!5e0!3m2!1ssv!2sse!4v1527750055465"
+            },
+            {
+                "Id": "hedensbyn-02",
+                "ProjectId": "hedensbyn",
+                "Name": "Enhet 2 - Butikslokal",
+                "Price": 5100000,
+                "Rent": 16000,
+                "Thumbnail": "butiksenhet.png",
+                "Size": 384,
+                "Sold": true,
+                "SalesAgent": {
+                    "Id": "jorgen",
+                    "Name": "Jörgen Munter",
+                    "Description": "",
+                    "Email": "jorgen.munter@industriradhus.se",
+                    "Phone": "070-6665544",
+                    "Picture": {
+                        "FileName": "jorgen.png"
+                    }
+                },
+                "MainDescription": {
+                    "Heading": "Enhet 1 - Butikslokal",
+                    "Text": "Bla bla.",
+                    "Size": 1
+                },
+                "Descriptions": [
+                    {
+                        "Heading": "Beskrivning ett",
+                        "Text": "Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok. Lorem ipsum har inte bara överlevt fem århundraden, utan även övergången till elektronisk typografi utan större förändringar. Det blev allmänt känt på 1960-talet i samband med lanseringen av Letraset-ark med avsnitt av Lorem Ipsum, och senare med mjukvaror som Aldus PageMaker.",
+                        "Size": 3
+                    },
+                    {
+                        "Heading": "Beskrivning två",
+                        "Text": "Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok. Lorem ipsum har inte bara överlevt fem århundraden, utan även övergången till elektronisk typografi utan större förändringar. Det blev allmänt känt på 1960-talet i samband med lanseringen av Letraset-ark med avsnitt av Lorem Ipsum, och senare med mjukvaror som Aldus PageMaker.",
+                        "Size": 3
+                    }
+                ],
+                "CharacteristicsSections": [
+                    {
+                        "Heading": "Byggnad",
+                        "Characteristics": [
+                            {
+                                "Description": "Grund",
+                                "Text": "Betong"
+                            },
+                            {
+                                "Description": "Stomme",
+                                "Text": "Betong"
+                            },
+                            {
+                                "Description": "Bjälklag",
+                                "Text": "Betong"
+                            },
+                            {
+                                "Description": "Tak",
+                                "Text": "Plåt"
+                            },
+                            {
+                                "Description": "Fasad",
+                                "Text": "Plåt"
+                            },
+                            {
+                                "Description": "Ventilation",
+                                "Text": "Frånluft"
+                            },
+                            {
+                                "Description": "Fönstertyp",
+                                "Text": "Treglas"
+                            },
+                            {
+                                "Description": "VA",
+                                "Text": "Kommunalt vatten och avlopp"
+                            },
+                            {
+                                "Description": "Uppvärmning",
+                                "Text": "Bergvärme"
+                            }
+                        ]
+                    }
+                ],
+                "Pictures": [
+                    {
+                        "FileName": "unit-hedensbyn01-img01.png"
+                    },
+                    {
+                        "FileName": "unit-hedensbyn01-img02.png"
+                    },
+                    {
+                        "FileName": "unit-hedensbyn01-img03.png"
+                    },
+                    {
+                        "FileName": "unit-hedensbyn01-img04.png"
+                    }
+                ],
+                "GoogleMapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1702.582084811809!2d21.02675231660073!3d64.7415872728741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjTCsDQ0JzI5LjciTiAyMcKwMDEnNDQuMiJF!5e0!3m2!1ssv!2sse!4v1527750055465"
+            },
+            {
+                "Id": "hedensbyn-08",
+                "ProjectId": "hedensbyn",
+                "Name": "Enhet 8 - Lagerlokal",
+                "Price": 2550000,
+                "Rent": 8000,
+                "Thumbnail": "lagerenhet.png",
+                "Size": 192,
+                "Sold": true,
+                "SalesAgent": {
+                    "Id": "jorgen",
+                    "Name": "Jörgen Munter",
+                    "Description": "",
+                    "Email": "jorgen.munter@industriradhus.se",
+                    "Phone": "070-6665544",
+                    "Picture": {
+                        "FileName": "jorgen.png"
+                    }
+                },
+                "MainDescription": {
+                    "Heading": "Enhet 1 - Butikslokal",
+                    "Text": "Bla bla.",
+                    "Size": 1
+                },
+                "Descriptions": [
+                    {
+                        "Heading": "Beskrivning ett",
+                        "Text": "Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok. Lorem ipsum har inte bara överlevt fem århundraden, utan även övergången till elektronisk typografi utan större förändringar. Det blev allmänt känt på 1960-talet i samband med lanseringen av Letraset-ark med avsnitt av Lorem Ipsum, och senare med mjukvaror som Aldus PageMaker.",
+                        "Size": 3
+                    },
+                    {
+                        "Heading": "Beskrivning två",
+                        "Text": "Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok. Lorem ipsum har inte bara överlevt fem århundraden, utan även övergången till elektronisk typografi utan större förändringar. Det blev allmänt känt på 1960-talet i samband med lanseringen av Letraset-ark med avsnitt av Lorem Ipsum, och senare med mjukvaror som Aldus PageMaker.",
+                        "Size": 3
+                    }
+                ],
+                "CharacteristicsSections": [
+                    {
+                        "Heading": "Byggnad",
+                        "Characteristics": [
+                            {
+                                "Description": "Grund",
+                                "Text": "Betong"
+                            },
+                            {
+                                "Description": "Stomme",
+                                "Text": "Betong"
+                            },
+                            {
+                                "Description": "Bjälklag",
+                                "Text": "Betong"
+                            },
+                            {
+                                "Description": "Tak",
+                                "Text": "Plåt"
+                            },
+                            {
+                                "Description": "Fasad",
+                                "Text": "Plåt"
+                            },
+                            {
+                                "Description": "Ventilation",
+                                "Text": "Frånluft"
+                            },
+                            {
+                                "Description": "Fönstertyp",
+                                "Text": "Treglas"
+                            },
+                            {
+                                "Description": "VA",
+                                "Text": "Kommunalt vatten och avlopp"
+                            },
+                            {
+                                "Description": "Uppvärmning",
+                                "Text": "Bergvärme"
+                            }
+                        ]
+                    }
+                ],
+                "Pictures": [
+                    {
+                        "FileName": "unit-hedensbyn01-img01.png"
+                    },
+                    {
+                        "FileName": "unit-hedensbyn01-img02.png"
+                    },
+                    {
+                        "FileName": "unit-hedensbyn01-img03.png"
+                    },
+                    {
+                        "FileName": "unit-hedensbyn01-img04.png"
+                    }
+                ],
+                "GoogleMapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1702.582084811809!2d21.02675231660073!3d64.7415872728741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjTCsDQ0JzI5LjciTiAyMcKwMDEnNDQuMiJF!5e0!3m2!1ssv!2sse!4v1527750055465"
+            },
+            {
+                "Id": "hedensbyn-09",
+                "ProjectId": "hedensbyn",
+                "Name": "Enhet 9 - Lagerlokal",
+                "Price": 2550000,
+                "Rent": 8000,
+                "Thumbnail": "lagerenhet.png",
+                "Size": 192,
+                "Sold": false,
+                "SalesAgent": {
+                    "Id": "jorgen",
+                    "Name": "Jörgen Munter",
+                    "Description": "",
+                    "Email": "jorgen.munter@industriradhus.se",
+                    "Phone": "070-6665544",
+                    "Picture": {
+                        "FileName": "jorgen.png"
+                    }
+                },
+                "MainDescription": {
+                    "Heading": "Enhet 1 - Butikslokal",
+                    "Text": "Bla bla.",
+                    "Size": 1
+                },
+                "Descriptions": [
+                    {
+                        "Heading": "Beskrivning ett",
+                        "Text": "Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok. Lorem ipsum har inte bara överlevt fem århundraden, utan även övergången till elektronisk typografi utan större förändringar. Det blev allmänt känt på 1960-talet i samband med lanseringen av Letraset-ark med avsnitt av Lorem Ipsum, och senare med mjukvaror som Aldus PageMaker.",
+                        "Size": 3
+                    },
+                    {
+                        "Heading": "Beskrivning två",
+                        "Text": "Lorem Ipsum är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för att göra ett provexemplar av en bok. Lorem ipsum har inte bara överlevt fem århundraden, utan även övergången till elektronisk typografi utan större förändringar. Det blev allmänt känt på 1960-talet i samband med lanseringen av Letraset-ark med avsnitt av Lorem Ipsum, och senare med mjukvaror som Aldus PageMaker.",
+                        "Size": 3
+                    }
+                ],
+                "CharacteristicsSections": [
+                    {
+                        "Heading": "Byggnad",
+                        "Characteristics": [
+                            {
+                                "Description": "Grund",
+                                "Text": "Betong"
+                            },
+                            {
+                                "Description": "Stomme",
+                                "Text": "Betong"
+                            },
+                            {
+                                "Description": "Bjälklag",
+                                "Text": "Betong"
+                            },
+                            {
+                                "Description": "Tak",
+                                "Text": "Plåt"
+                            },
+                            {
+                                "Description": "Fasad",
+                                "Text": "Plåt"
+                            },
+                            {
+                                "Description": "Ventilation",
+                                "Text": "Frånluft"
+                            },
+                            {
+                                "Description": "Fönstertyp",
+                                "Text": "Treglas"
+                            },
+                            {
+                                "Description": "VA",
+                                "Text": "Kommunalt vatten och avlopp"
+                            },
+                            {
+                                "Description": "Uppvärmning",
+                                "Text": "Bergvärme"
+                            }
+                        ]
+                    }
+                ],
+                "Pictures": [
+                    {
+                        "FileName": "unit-hedensbyn01-img01.png"
+                    },
+                    {
+                        "FileName": "unit-hedensbyn01-img02.png"
+                    },
+                    {
+                        "FileName": "unit-hedensbyn01-img03.png"
+                    },
+                    {
+                        "FileName": "unit-hedensbyn01-img04.png"
+                    }
+                ],
+                "GoogleMapsUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1702.582084811809!2d21.02675231660073!3d64.7415872728741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjTCsDQ0JzI5LjciTiAyMcKwMDEnNDQuMiJF!5e0!3m2!1ssv!2sse!4v1527750055465"
+            }
+        ]
+    }
+]

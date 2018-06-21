@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IUnit } from './unit';
+import { IUnit } from '../../model/unit';
 import { ActivatedRoute} from '@angular/router';
-import { UnitService } from './unit.service';
 
 @Component({
   selector: 'app-unit',
@@ -12,15 +11,12 @@ export class UnitComponent implements OnInit {
 
   unit: IUnit;
 
-  constructor(private _route: ActivatedRoute, private _unitService: UnitService) { }
+  constructor(private _route: ActivatedRoute) { }
 
   ngOnInit() {
     const id = this._route.snapshot.paramMap.get('id');
     console.log(id);
-    this._unitService.getUnits(id)
-          .subscribe(unit => {
-              this.unit = unit[0];
-            });
+
   }
 
 }

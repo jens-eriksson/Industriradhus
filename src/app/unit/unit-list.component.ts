@@ -1,6 +1,6 @@
-import { UnitService } from './unit.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { IUnit } from './unit';
+import { IUnit } from '../../model/unit';
+import { IProject } from '../../model/project';
 
 @Component({
   selector: 'app-unit-list',
@@ -9,16 +9,12 @@ import { IUnit } from './unit';
 })
 export class UnitListComponent implements OnInit {
 
-  @Input() projectId: string;
-  units: IUnit[];
-
-  constructor(private _unitService: UnitService) { }
+  @Input() project: IProject;
+  
+  constructor() { }
 
   ngOnInit() {
-    this._unitService.getUnits(this.projectId)
-            .subscribe(units => {
-              this.units = units;
-            });
+
   }
 
 

@@ -1,4 +1,30 @@
- <div class="container">
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand display-3" href="#">INDUSTRIRADHUS.SE</a>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            style="color: grey;">
+            {{ selectedProject.name }}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <span>
+                <a class="dropdown-item" href="#">BLA</a>
+                <div class="dropdown-divider"></div>
+            </span>
+            
+            <a class="dropdown-item" href="#">PROJEKT TVÅ</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">PROJEKT TRE</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<div class="container">
   <div class="card">
 
     <div id="carouselExampleIndicators" class="card-img-top carousel slide" data-ride="carousel">
@@ -33,7 +59,7 @@
       <br>
       <div>
       <h3>Till salu</h3>
-          <app-unit-list [projectId]='project.id'></app-unit-list>
+          <app-unit-list [project]='project'></app-unit-list>
       </div>
     </div>
   </div>
