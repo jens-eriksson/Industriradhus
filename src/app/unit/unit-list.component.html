@@ -10,8 +10,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor='let unit of units' >
-      <td><img src="{{'../../assets/' + unit.picture}}" width="50" /></td>
+    <tr *ngFor='let unit of project.units' >
+      <td><img src="{{'../../assets/' + unit.thumbnail}}" width="50" /></td>
       <th><a [routerLink]="['/unit', unit.id]">{{ unit.name }}</a></th>
       <td> {{ unit.size }}</td>
       <td>{{ unit.price | currency:'SEK':'':'1.0-0' }} kr</td>

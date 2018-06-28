@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { IUnit } from './unit';
+import { Component, OnInit, Input } from '@angular/core';
+import { IUnit } from '../../model/unit';
 import { ActivatedRoute} from '@angular/router';
 import { UnitService } from './unit.service';
 
@@ -17,10 +17,11 @@ export class UnitComponent implements OnInit {
   ngOnInit() {
     const id = this._route.snapshot.paramMap.get('id');
     console.log(id);
-    this._unitService.getUnits(id)
-          .subscribe(unit => {
-              this.unit = unit[0];
-            });
+    this._unitService.getUnit(id)
+          .subscribe(
+            unit => this.unit = unit,
+            error => console.log(<any>error)
+          );
   }
 
 }

@@ -1,9 +1,7 @@
-import { UnitListComponent } from './../unit/unit-list.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
-import { UnitService } from './../unit/unit.service';
+import { IProject } from '../../model/project';
 import { ProjectService } from './project.service';
-import { IProject } from './project';
 
 @Component({
   selector: 'app-project',
@@ -13,20 +11,23 @@ import { IProject } from './project';
 export class ProjectComponent implements OnInit {
 
   projects: IProject[];
-  project: IProject;
+  errorMessage = '';
+  selectedProject: IProject;
 
-  constructor(private _projectService: ProjectService,
-              private _unitService: UnitService,
-              private _route: ActivatedRoute) {
+  constructor(private _route: ActivatedRoute, private _projectService: ProjectService) {
+
   }
 
   ngOnInit() {
-    const id = this._route.snapshot.paramMap.get('id');
+    console.log(this._route.snapshot.paramMap.get('id'));
     this._projectService.getProjects()
-          .subscribe(projects => {
+          .subscribe(
+            projects => {
               this.projects = projects;
-              this.project = this.projects[0];
-            });
-
+              this.selectedProject = projects[0];
+            },
+            error => console.log(<any>error)
+          );
   }
+
 }

@@ -1,13 +1,32 @@
- <div class="container">
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand display-3" href="#">INDUSTRIRADHUS.SE</a>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            style="color: grey;">
+            <span>{{ selectedProject.name | uppercase }}</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <span *ngFor='let project of projects'>
+              <a class="dropdown-item" href="{{'project/' + project.id}}">{{project.name | uppercase}}</a>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<div class="container">
+
   <div class="card">
 
     <div id="carouselExampleIndicators" class="card-img-top carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="../assets/hedensbyn1.PNG" alt="First slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="../assets/hedensbyn2.PNG" alt="Second slide">
+        <div *ngFor='let picture of selectedProject.pictures; let i=index;' class="carousel-item" [ngClass]="{'active': i == 0}">
+          <img class="d-block w-100" src="{{'../assets/' + picture.fileName}}" alt="First slide">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -20,25 +39,23 @@
       </a>
     </div>
 
-      <br>
+    <br>
     <div class="card-body">
-      <h2 class="display-4">{{ project.name }}</h2>
+      <h2 class="display-4">{{ selectedProject.mainDescription.heading }}</h2>
       <p class="card-text">
-          Skellefteå  Kommun  har  som  ambition  att  skapa  en  stark  företagspark  på  Hedensbyn.  Där  ser  vi  att  industriradhus  borde  vara  en  självklar  del  av  en  sådan  park.  Vi  har  pratat  med  ett  antal  lokala  fastighetsmäklare  som  menar  att  efterfrågan  på  denna  form  av  lokaler  är  stor  redan  i  dagsläget.      Under  andra  halvåret  2018  siktar  Northvolt  på  att  ta  det  första  spadtaget  i  arbetet  med  att  skapa  Europas  största  produktionsanläggning  för  litiumjonbatterier  på  industriområdet  i  Hedensbyn.  Satsningen  väntas  ge  2000  till  2500  nya  arbetstillfällen  samt  skapa  många  affärsmöjligheter  för  underleverantörer.  Det  är  just  till  dessa  underleverantörer  och  mindre  bolagIndustriradhus  riktar  sig  mot.  För  att  bidra  till  utvecklingen  planeras  det  att  byggas  ett  Industriradhus  med  28  stycken  fack  som  riktar  sig  till  små  och  medelstora  företag  som  vill  etablera  sig  i  denna  framväxande  företagspark.
+        {{ selectedProject.mainDescription.text }}
       </p>
-      <h5>Vad  är  industriradhus?</h5>
-      <p class="card-text">Industriradhus  är  en  ny  typ  av  lösning  för  små  och  medelstora  företag  som  vill  äga  sina  egna  lokaler  men  som  på  egen  hand  inte  vill  investera  i  uppförandet  av  en  större  industribyggnad.  Istället  kan  ett  kluster  av  mindre  företag  gå  samman  och  bygga  en  större  lokal  med  enheter  som  upplåts  som  bostadsrätter.  Det  skapas  även  gemensamma  ytor  såsom  lunchrum,  gym,  konferensrum  etc.</p>
-      <h5>Två  typer  av  enheter</h5>
-      <p class="card-text">På  Hedensbyns  företagspark  kommer  det  gå  att  beställa  två  olika  typer  av  industriradhus.  En  mindre  modell  som  lämpar  sig  som  garage  eller  verkstad  och  en  större  modell  som  riktar  sig  till  dig  som  vill  ha  en  butikslokal  med  tillhörande  lager/kontor.  Alternativt  kombinera  ihop  både  en  butiksyta  med  ett  garage  eller  lagerlokal  i  anslutning  till  butiken.  Möjligheterna  är  många,  bara  att  bestämma  vilken  kombination  man  vill  ha.  </p>
-      <br>
-      <div>
-      <h3>Till salu</h3>
-          <app-unit-list [projectId]='project.id'></app-unit-list>
+
+      <div *ngFor='let description of selectedProject.descriptions'>
+        <br>
+        <h5>{{ description.heading}}</h5>
+        <p class="card-text">{{ description.text }}</p>
+      </div>
+      <div *ngIf='selectedProject'>
+        <br>
+        <h3>Till salu</h3>
+        <app-unit-list [project]='selectedProject'></app-unit-list>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
