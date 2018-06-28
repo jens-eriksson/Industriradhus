@@ -10,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor='let unit of units' >
+    <tr *ngFor='let unit of project.units' >
       <td><img src="{{'../../assets/' + unit.thumbnail}}" width="50" /></td>
       <th><a [routerLink]="['/unit', unit.id]">{{ unit.name }}</a></th>
       <td> {{ unit.size }}</td>

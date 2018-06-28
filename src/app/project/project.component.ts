@@ -10,20 +10,24 @@ import { ProjectService } from './project.service';
 })
 export class ProjectComponent implements OnInit {
 
-  public projects: IProject[];
-  public selectedProject: IProject;
+  projects: IProject[];
+  errorMessage = '';
+  selectedProject: IProject;
 
   constructor(private _route: ActivatedRoute, private _projectService: ProjectService) {
+
   }
 
   ngOnInit() {
-    const id = this._route.snapshot.paramMap.get('id');
-    console.log(id);
-
+    console.log(this._route.snapshot.paramMap.get('id'));
     this._projectService.getProjects()
-          .subscribe(projects => {
+          .subscribe(
+            projects => {
               this.projects = projects;
               this.selectedProject = projects[0];
-            });
+            },
+            error => console.log(<any>error)
+          );
   }
+
 }

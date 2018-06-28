@@ -10,7 +10,7 @@ import { IProject } from '../../model/project';
 export class UnitListComponent implements OnInit {
 
   @Input() project: IProject;
-  
+
   constructor() { }
 
   ngOnInit() {

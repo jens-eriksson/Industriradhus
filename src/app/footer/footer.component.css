@@ -1,0 +1,8 @@
+.page-footer{
+    background-color: rgb(104, 103, 103);
+    color: gainsboro;
+}
+
+.page-footer a, a:hover {
+    color: gainsboro;
+}
