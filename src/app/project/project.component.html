@@ -1,60 +1,89 @@
 <nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand display-3" href="#">INDUSTRIRADHUS.SE</a>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <ul class="nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-            style="color: grey;">
-            <span>{{ selectedProject.name | uppercase }}</span>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <span *ngFor='let project of projects'>
-              <a class="dropdown-item" href="{{'project/' + project.id}}">{{project.name | uppercase}}</a>
-            </span>
-          </div>
-        </li>
-      </ul>
-    </div>
+    <a class="navbar-brand display-3" href="#">
+      industriradhus.se
+    </a>
   </div>
 </nav>
-<br>
-<div class="container">
 
-  <div class="card">
-
-    <div id="carouselExampleIndicators" class="card-img-top carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div *ngFor='let picture of selectedProject.pictures; let i=index;' class="carousel-item" [ngClass]="{'active': i == 0}">
-          <img class="d-block w-100" src="{{'../assets/' + picture.fileName}}" alt="First slide">
+<div class="landing d-none d-md-block">
+    <div class="card d-none d-md-block">
+        <div id="carousel-project" class="carousel slide">
+          <div class="carousel-inner">
+            <div *ngFor='let picture of selectedProject.pictures; let i=index;' class="carousel-item" [ngClass]="{'active': i == 0}">
+              <img class="d-block w-100" src="{{'../assets/' + picture.fileName}}" alt="First slide">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carousel-project" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel-project" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
+</div>
 
-    <br>
-    <div class="card-body">
-      <h2 class="display-4">{{ selectedProject.mainDescription.heading }}</h2>
-      <p class="card-text">
-        {{ selectedProject.mainDescription.text }}
-      </p>
 
-      <div *ngFor='let description of selectedProject.descriptions'>
-        <br>
-        <h5>{{ description.heading}}</h5>
-        <p class="card-text">{{ description.text }}</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8" style="margin-bottom: 10px;">
+      <div class="card" style="height: 100%;">
+        <div class="card-body">
+          <h1 class="card-title">Hedensbyns Företagspark</h1>
+
+          <p class="card-text">Skellefteå Kommun är i full gång att skapa en nya företagspark på Hedensbyn. Under andra halvåret 2018 kommer Northvolt
+            att ta det första spadtaget i arbetet med att skapa Europas största produktionsanläggning för litiumjonbatterier
+            i samma område.</p>
+          <p class="card-text">Satsningen väntas skapa 2 000 till 2 500 nya arbetstillfällen och skapa många nya affärsmöjligheter för underleverantörer.</p>
+          <p class="card-text">För att bidra till utvecklingen planerar vi att uppföra ett industriradhus med nitton stycken fack. </p>
+          <p class="card-text">Kontakta oss gärna om ni har planer på att etablera er i området. Vi har goda möjligheter att hjälpa er med funktionella
+            och prisvärda lokallösningar.</p>
+          <br>
+          <a class="btn btn-outline-success" [routerLink]="['/about']">Kontakt...</a>
+        </div>
       </div>
-      <div *ngIf='selectedProject'>
-        <br>
-        <h3>Till salu</h3>
-        <app-unit-list [project]='selectedProject'></app-unit-list>
+
+    </div>
+    <div class="col-md-4" style="margin-bottom: 10px;">
+      <div class="card" style="height: 100%;">
+        <div class="card-body">
+          <p class="card-text">
+            <b>Kommun</b>
+            <br>Skellefteå</p>
+          <p class="card-text">
+            <b>Område</b>
+            <br>Hedensbyn</p>
+          <p class="card-text">
+            <b>Antal fack</b>
+            <br>19</p>
+          <p class="card-text">
+            <b>Storlek</b>
+            <br>154 kvm/fack</p>
+          <p class="card-text">
+            <b>Försäljningsstart</b>
+            <br>Vinter 2018/2019</p>
+          <p class="card-text">
+            <b>Pris</b>
+            <br>från 1 995 000 kr</p>
+          <p class="card-text">
+            <b>Avgift</b>
+            <br>från 7 640 kr/mån</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-12">
+      
+      <br>
+      <div class="card">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1702.582084811809!2d21.02675231660073!3d64.7415872728741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjTCsDQ0JzI5LjciTiAyMcKwMDEnNDQuMiJF!5e0!3m2!1ssv!2sse!4v1527750055465"
+          height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
       </div>
     </div>
   </div>

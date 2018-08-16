@@ -11,6 +11,8 @@ import { ProjectService } from './project/project.service';
 import { UnitService } from './unit/unit.service';
 import { TruncatePipe } from '../pipe/truncatepipe';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -19,16 +21,20 @@ import { FooterComponent } from './footer/footer.component';
     UnitComponent,
     UnitListComponent,
     TruncatePipe,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
+      { path: 'home', component: HomeComponent},
+      { path: 'about', component: AboutComponent},
       { path: 'project/:id', component: ProjectComponent},
       { path: 'unit/:id', component: UnitComponent},
-      { path: '', redirectTo: 'project/', pathMatch: 'full'},
-      { path: '**', redirectTo: 'project/', pathMatch: 'full'}
+      { path: '', redirectTo: 'home', pathMatch: 'full'},
+      { path: '**', redirectTo: 'home', pathMatch: 'full'}
     ])
   ],
   providers: [ProjectService, UnitService],
