@@ -1,0 +1,11 @@
+.navbar {
+    background-color: white;
+    border-radius: .25rem;
+    border: 1px solid rgba(0,0,0,.125);
+    margin-top: 10px;
+}
+
+.photo {
+    border-radius: 50%;
+    width: 40px;
+}

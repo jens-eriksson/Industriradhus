@@ -5,8 +5,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# compiled output
-/dist
+# compiled outputs
 /tmp
 /out-tsc
 

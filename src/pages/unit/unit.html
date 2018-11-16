@@ -1,0 +1,95 @@
+<div class="container" *ngIf="unit && project">
+  <app-header></app-header>
+  <div class="row">
+    <div class="col-9">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">{{ unit.name }}</h1>
+          <a *ngIf="project" [routerLink]="['/project', project.key]"><h5 class="card-title">{{ project.name }}</h5></a>
+          <p [innerHtml]="unit.description"></p>
+          <div *ngFor='let featureCategory of unit.featureCategories'>
+            <br>
+            <h3>{{featureCategory.name}}</h3>
+            <hr>
+            <div class="row">
+              <div class="col-4" *ngFor='let feature of featureCategory.features'>
+                <h5>{{ feature.name }}</h5>
+                <p>{{ feature.value }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Bilder</h3>
+          <hr>
+        </div>
+
+        <div id="carouselExampleIndicators" class="card-img-top carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item" *ngFor="let img of unit.images; let isFirst = first" [class.active]="isFirst">
+              <img class="d-block w-100" src="{{'../../assets/img/' + img.name }}" alt="">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Faktaruta</h5>
+          <table class="table table-borderless table-sm">
+            <tr>
+              <th>Pris</th>
+              <td>{{ unit.price | currency:'SEK':'':'1.0-0' }} kr</td>
+            </tr>
+            <tr>
+              <th>Avgift</th>
+              <td>{{ unit.rent | currency:'SEK':'':'1.0-0' }} kr</td>
+            </tr>
+            <tr>
+              <th>Storlek</th>
+              <td>{{ unit.size | currency:'SEK':'':'1.0-0' }} kvm</td>
+            </tr>
+
+          </table>
+        </div>
+      </div>
+      <div class="card">
+        <h5 class="card-body">Ansvarig mäklare</h5>
+        <img class="card-img-top" src="../assets/img/jorgen.png" alt="Mäklare">
+
+        <div class="card-body">
+
+          <p class="card-text"><b>Jörgen Munter</b></p>
+          <p class="card-text">070-173 37 88</p>
+          <p class="card-text"><a href="mailto:jorgen.munter@industriradhus.se">{{ 'jorgen.munter@industriradhus.se' | truncate}}</a></p>
+        </div>
+      </div>
+
+      <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Dokument</h5>
+            <ul style="list-style-type: none; padding: 0;">
+              <li><a><span class="far fa-file-pdf"></span> Stadgar BRF</a></li>
+              <li><a><span class="far fa-file-pdf"></span> Förhandsavtal</a></li>
+            </ul>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

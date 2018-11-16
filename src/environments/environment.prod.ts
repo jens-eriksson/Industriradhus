@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://industriradhusapi.azurewebsites.net/'
+  apiBaseUrl: 'https://industriradhus-api.azurewebsites.net/'
 };

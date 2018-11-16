@@ -1,38 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+body {
     background-color: rgb(250, 250, 250);
-}
-.navbar{
-    background: none;
-    z-index: 100;
-}
-
-.navbar-brand{
-    font-family: Consolas,monaco,monospace;
-    color: rgb(100, 100, 100);
-}
-
-.footer-heading{
-    font-family: Consolas,monaco,monospace;
-    font-size: 1.8rem;
-}
-
-.footer-links{
-    font-family: Consolas,monaco,monospace;
+    font-family: 'Open Sans', sans-serif;
 }
 
 a, a:hover{
     color: rgb(100, 100, 100);
-}
-
-.landing {
-    margin-top: -60px;
-    margin-bottom: -150px;
-}
-
-.landing img {
-    width:100%;
-    height: 100%;
 }
 
 .carousel-indicators li {

@@ -1,0 +1,69 @@
+{
+    "name": "Standardenhet (HFP01)",
+    "description": "",
+    "projectId": "5be056933e10c5e149f38c3c",
+    "size": 144,
+    "price": 1229000,
+    "rent": 4360,
+    "sold": false,
+    "featureCategories": [
+        {
+            "name": "Byggnadsbeskrivning",
+            "features": [
+                {
+                    "name": "Grund",
+                    "value": "Isolerad betongplatta"
+                },
+                {
+                    "name": "Fasad",
+                    "value": "Plåt"
+                },
+                {
+                    "name": "Stomme",
+                    "value": "Stål"
+                },
+                {
+                    "name": "Yttertak",
+                    "value": "Takpapp"
+                },
+                {
+                    "name": "Fönster",
+                    "value": "3-glas"
+                },
+                {
+                    "name": "Garageport",
+                    "value": "4x4,5 m"
+                },
+                {
+                    "name": "Dörr",
+                    "value": "Ståldörr typ Daloc"
+                },
+                {
+                    "name": "Trappor",
+                    "value": "Spiraltrappa i stål"
+                }
+            ]
+        },
+        {
+            "name": "Installationer",
+            "features": [
+                {
+                    "name": "VVS",
+                    "value": "Fastigheten ansluts till kommunala nätet"
+                },
+                {
+                    "name": "Uppvärmning",
+                    "value": "Frånluftvärmepump med golvvärme"
+                },
+                {
+                    "name": "TV/Tele/Bredband",
+                    "value": "Fastigheten är förberedd för att anslutas till fibernät"
+                },
+                {
+                    "name": "Ventilation",
+                    "value": "Mekanisk till- och frånluftsvent. Varje enskild bostadsrättshavare svarar för att ventilationen är dimensionerad efter sin verksamhet"
+                }
+            ]
+        }
+    ]
+}
