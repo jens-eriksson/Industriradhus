@@ -39,6 +39,7 @@ coverage
 
 # IDE - VSCode
 .vscode/*
+.editorconfig 
 
 # nyc test coverage
 .nyc_output
