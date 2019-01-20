@@ -1,0 +1,16 @@
+.card {
+    margin-bottom: 20px;
+}
+
+.max-height {
+    height: calc(100% - 20px);
+}
+
+.nav-link {
+    border-bottom: 2px solid white;
+    text-transform: uppercase;
+}
+
+.nav-link.active {
+    border-bottom: 2px solid green;
+}

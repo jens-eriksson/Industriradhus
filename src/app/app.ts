@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthProvider } from '../providers/auth';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-root',
@@ -8,16 +9,15 @@ import { AuthProvider } from '../providers/auth';
     styleUrls: ['./app.css']
 })
 export class Industriradhus implements OnInit {
+    subscription: Subscription;
 
     constructor(
         private router: Router,
         private authProvider: AuthProvider
     ) {
         this.authProvider.initilize();
-        this.router.navigate(["home"]);
     }
 
     ngOnInit() {
     }
-
 }

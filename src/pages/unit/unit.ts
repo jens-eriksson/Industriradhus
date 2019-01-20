@@ -1,7 +1,10 @@
+import { SalesAgentProvider } from './../../providers/sales-agent';
+import { UnitProvider } from './../../providers/unit';
 import { ProjectProvider } from './../../providers/project';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
-import { UnitProvider } from '../../providers/unit';
+
+declare var $: any;
 
 @Component({
   selector: 'app-unit',
@@ -11,10 +14,12 @@ import { UnitProvider } from '../../providers/unit';
 export class UnitPage implements OnInit {
   project;
   unit;
-
+  salesAgent;
+  
   constructor(
     private route: ActivatedRoute,
     private unitProvider: UnitProvider,
+    private salesAgentProvider: SalesAgentProvider,
     private projectProvider: ProjectProvider
   ) {
     let unitId = this.route.snapshot.paramMap.get("id");
@@ -22,10 +27,12 @@ export class UnitPage implements OnInit {
       this.unit = unit;
       this.projectProvider.getProject(unit.projectKey).subscribe(project => {
         this.project = project;
+      });
+      this.salesAgentProvider.getSalesAgent(unit.salesAgentKey).subscribe(salesAgent => {
+        this.salesAgent = salesAgent;
       })
     });
   }
 
   ngOnInit() {  }
-
 }

@@ -47,7 +47,10 @@ export class AuthProvider {
             this.currentUser["jwt"] = jwt;
         }
         catch(err) {
-            this.currentUser["jwt"] = null;
+            if(this.currentUser) {
+                this.currentUser["jwt"] = null;
+            }
+            
             console.error(err);
         }
         
@@ -63,7 +66,9 @@ export class AuthProvider {
             this.currentUser["jwt"] = jwt;
         }
         catch(err){
-            this.currentUser["jwt"] = null;
+            if(this.currentUser) {
+                this.currentUser["jwt"] = null;
+            }
             console.error(err);
         }
         

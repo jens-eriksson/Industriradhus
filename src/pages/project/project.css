@@ -1,7 +1,12 @@
-.row {
+.card {
     margin-bottom: 20px;
 }
 
-.card {
-    height: 100%;
+.max-height {
+    height: calc(100% - 20px);
+}
+
+.sold {
+    text-decoration: line-through;
+    background-color: rgb(241, 241, 241);
 }

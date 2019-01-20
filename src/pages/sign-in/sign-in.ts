@@ -27,6 +27,7 @@ export class SignInPage implements OnInit {
         this.router.navigate(["home"]);
       }
       else {
+        console.log("signInWithGoogle faild");
         this.authProvider.signOut();
         this.message = "Sorry. Du har inga rättighet";
       }

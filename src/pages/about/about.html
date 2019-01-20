@@ -1,11 +1,11 @@
 <div class="container" style="min-height: 100%;">
   <app-header></app-header>
   <div class="row">
-    <div class="col-md-6">
-      <div class="card" style="height: 100%;">
+    <div class="col-md-9">
+      <div class="card max-height">
 
         <div class="card-body">
-          <h3>Svenska Industriradhus AB<br>
+          <h3>Nordiska Industriradhus AB<br>
             <small class="text-muted">Vi är en projektutvecklare av industriradhus.</small>
           </h3>
           <br>
@@ -16,37 +16,36 @@
             Vårt arbete ska bidra till att skapa väl fungerande industrikluster för dagens och morgondagens företagare. Med hållbart
             samhällsbyggande avser vi stärka de orter vi investerar i.
           </p>
-
+          <br>
+          <h3>Pågående projekt</h3>
+          <div class="row">
+          <div class="card" *ngFor="let project of projects" style="margin-bottom: 20px; width: 11rem; margin:10px;">
+              <div class="card-body">
+                <h5 class="card-title">{{ project.city }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ project.name }}</h6>
+                <hr>
+                <p class="card-text">
+                  <b>Försäljningsstart</b>
+                  <br>{{ project.salesLaunch }}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-3" align="center">
-      <div class="card" style="width: 241px;;">
-        <img src="../../assets/photos/jorgen.png">
-
-        <div class="card-body">
-
-          <p class="card-text"><b>Jörgen Munter</b></p>
-          <p class="card-text">070-173 37 88</p>
-          <p class="card-text"><a href="mailto:jorgen.munter@industriradhus.se" title="jorgen.munter@industriradhus.se">{{
-              'jorgen.munter@industriradhus.se' | truncate}}</a></p>
-        </div>
-      </div>
+    <div class="col-md-3">
+        <div class="card" *ngIf="contact">
+            <img class="card-img-top" src="{{ '../assets/img/' + contact.photo.name }}" alt="Kontaktperson">
+    
+            <div class="card-body" align="center">
+    
+              <p class="card-text"><b>{{ contact.name }}</b></p>
+              <p class="card-text">{{ contact.phone }}</p>
+              <p class="card-text"><a href="{{ 'mailto:' + contact.email }}">{{ contact.email | truncate}}</a></p>
+            </div>
+          </div>
     </div>
-    <div class="col-md-3" align="center">
-      <div class="card" style="width: 241px;;">
-        <img src="../../assets/photos/jens.png">
-
-        <div class="card-body">
-
-          <p class="card-text"><b>Jens Eriksson</b></p>
-          <p class="card-text">070-688 30 99</p>
-          <p class="card-text"><a href="mailto:jens.eriksson@industriradhus.se" title="jens.eriksson@industriradhus.se">{{
-              'jens.eriksson@industriradhus.se' | truncate }}</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
+  </div>c
 </div>
 <br><br><br><br><br><br>
 <app-footer></app-footer>

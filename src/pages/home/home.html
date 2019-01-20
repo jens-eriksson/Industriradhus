@@ -1,10 +1,25 @@
-
-
 <div class="container">
-    <app-header></app-header>
+  <app-header></app-header>
+  <div class="row">
+    <div class="col-md-12" *ngFor="let project of projects">
+      <div class="card" *ngIf="project.active" style="margin-bottom: 20px;">
+        <img src="{{ '../../assets/img/' + project.images[0].name }}" class="card-img-top">
+        <div class="card-body">
+          <h3 class="card-title">{{ project.name }}</h3>
+          <h6 class="card-subtitle mb-2 text-muted">{{ project.city }}</h6>
+          <hr>
+          <p class="card-text">
+            <b>Försäljningsstart</b>
+            <br>{{ project.salesLaunch }}</p>
+          <a *ngIf="project.active" [routerLink]="['/projekt', project.key]" class="btn btn-outline-success">Läs mer...</a>
+          <a *ngIf="!project.active" [routerLink]="['/kontakt']" class="btn btn-outline-success">Kontakt...</a>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-8">
-      <div class="card d-none d-md-block" style="height: 100%;">
+      <div class="card max-height">
 
         <div class="card-body">
           <h3>Vad är industriradhus?</h3>
@@ -31,68 +46,35 @@
 
           </p>
           <p>
-            Vi kan skapa rena lagringsytor, verkstäder med kontorsdel eller en butikslokal. Möjligheterna är många och det är era behov
+            Vi kan skapa rena lagringsytor, verkstäder med kontorsdel eller butikslokaler. Möjligheterna är många och det är era behov
             som avgör.
           </p>
-    <!--
-          <div id="carousel-images" class="carousel slide">
-            <ol class="carousel-indicators">
-              <li data-target="#carousel-images" data-slide-to="0" class="active"></li>
-              <li data-target="#carousel-images" data-slide-to="1"></li>
-              <li data-target="#carousel-images" data-slide-to="2"></li>
-              <li data-target="#carousel-images" data-slide-to="3"></li>
-              <li data-target="#carousel-images" data-slide-to="4"></li>
-              <li data-target="#carousel-images" data-slide-to="5"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-       
-                <img class="d-block w-100" src="../../assets/planlosning-01.png" />
-              </div>
-              <div class="carousel-item">
-             
-                <img class="d-block w-100" src="../../assets/planlosning-02.png" />
-              </div>
-              <div class="carousel-item">
-             
-                <img class="d-block w-100" src="../../assets/planlosning-03.png" />
-              </div>
-              <div class="carousel-item">
-            
-                <img class="d-block w-100" src="../../assets/planlosning-04.png" />
-              </div>
-              <div class="carousel-item">
-             
-                <img class="d-block w-100" src="../../assets/planlosning-05.png" />
-              </div>
-              <div class="carousel-item">
-              
-                <img class="d-block w-100" src="../../assets/planlosning-06.png" />
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carousel-images" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel-images" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        -->
+          <p>
+            <a [routerLink]="['/losningar']" class="btn btn-outline-success">Läs mer...</a>
+          </p>
+          <img src="../../assets/img/flexibla-losningar.png" width="100%" />
+
+
         </div>
       </div>
     </div>
     <div class="col-md-4">
-      <div class="card" *ngFor="let project of projects" style="margin-bottom: 20px;">
+      <div class="card">
         <div class="card-body">
-          <h5 class="card-title">{{ project.city }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ project.name }}</h6>
-          <hr>
-          <p class="card-text">
-            <b>Försäljningsstart</b>
-            <br>{{ project.salesLaunch }}</p>
-          <a *ngIf="project.active" [routerLink]="['/project', project.key]" class="btn btn-outline-success">Läs mer...</a>
+          <h4>Kommande projekt</h4>
+          <div *ngFor="let project of projects">
+            <div *ngIf="!project.active" style="margin-bottom: 20px;">
+              <h5>{{ project.name }}</h5>
+              <h6 class="mb-2 text-muted">{{ project.city }}</h6>
+              <hr>
+              <p>
+                <b>Försäljningsstart</b>
+                <br>{{ project.salesLaunch }}</p>
+              <a *ngIf="project.active" [routerLink]="['/projekt', project.key]" class="btn btn-outline-success">Läs mer...</a>
+              <a *ngIf="!project.active" [routerLink]="['/kontakt']" class="btn btn-outline-success">Kontakt...</a>
+            </div>
+            <br>
+          </div>
         </div>
       </div>
     </div>
