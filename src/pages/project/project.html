@@ -1,48 +1,50 @@
 <div class="container" *ngIf="project">
   <app-header></app-header>
-
   <div class="row">
-      <div class="col-md-12">
-        <div class="card">
-  
-          <div id="carousel-images" class="carousel" data-interval="false">
-            <div class="carousel-inner">
-              <div class="carousel-item" *ngFor="let img of project.images; let isFirst = first" [class.active]="isFirst">
-                <img class="d-block w-100" src="{{'../../assets/img/' + img.name}}" data-toggle="modal" [attr.data-target]="'#modal-images-' + project.key" />
-              </div>
+    <div class="col-md-9">
+      <div class="card">
+        <div class="card-body text-center">
+          <h1 class="card-title">{{ project.name }}</h1>
+        </div>
+        <div id="carousel-images" class="carousel" data-interval="false">
+          <div class="carousel-inner">
+            <div class="carousel-item" *ngFor="let img of project.images; let isFirst = first" [class.active]="isFirst">
+              <img class="d-block w-100" src="{{'../../assets/img/' + img.name}}" data-toggle="modal"
+                [attr.data-target]="'#modal-images-' + project.key" />
             </div>
           </div>
-          <div class="text-center" style="padding: 5px;">
-              <a class="btn btn-outline-secondary btn-round" href="#carousel-images" role="button" data-slide="prev" style="margin-right: 5px;"><span class="fa fa-chevron-left"></span></a>
-              <a class="btn btn-outline-secondary btn-round" href="#carousel-images" role="button" data-slide="next"><span class="fa fa-chevron-right"></span></a>
+        </div>
+        <div class="text-center" style="padding: 5px;">
+          <a class="btn btn-outline-secondary btn-round" href="#carousel-images" role="button" data-slide="prev" style="margin-right: 5px;"><span
+              class="fa fa-chevron-left"></span></a>
+          <a class="btn btn-outline-secondary btn-round" href="#carousel-images" role="button" data-slide="next"><span
+              class="fa fa-chevron-right"></span></a>
+        </div>
+        <div class="text-center m-2">
+          <a class="btn btn-outline-secondary" href="#" data-toggle="modal" [attr.data-target]="'#modal-images-' + project.key">Visa
+            alla</a>
+        </div>
+        <div class="card-body">
+          <hr>
+            <span [innerHtml]="project.description"></span>
+            <a class="btn btn-outline-success" [routerLink]="['/kontakt']">Kontakt...</a>
+        </div>
+      </div>
+      
+
+    </div>
+    <div class="col-md-3">
+        <div class="card max-height">
+            <div class="card-body">
+              <p class="card-text" *ngFor="let info of project.summary">
+                <b>{{ info.name }}</b>
+                <br>{{ info.value }}
+              </p>
+            </div>
           </div>
-        </div>
-        
-      </div>
-    </div>
-
-  <div class="row">
-    <div class="col-md-8">
-      <div class="card max-height">
-        <div class="card-body">
-          <h1 class="card-title">{{ project.name }}</h1>
-          <span [innerHtml]="project.description"></span>
-          <a class="btn btn-outline-success" [routerLink]="['/kontakt']">Kontakt...</a>
-        </div>
-      </div>
-
-    </div>
-    <div class="col-md-4">
-      <div class="card max-height">
-        <div class="card-body">
-          <p class="card-text" *ngFor="let info of project.summary">
-            <b>{{ info.name }}</b>
-            <br>{{ info.value }}
-          </p>
-        </div>
-      </div>
     </div>
   </div>
+
 
   <div class="row" *ngIf="units">
     <div class="col-md-12">
@@ -74,7 +76,7 @@
     </div>
   </div>
 
-  
+
 
   <div class="row">
     <div class="col-md-12">

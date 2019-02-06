@@ -22,4 +22,14 @@ export class HomePage implements OnInit {
     
   }
 
+  getInactiveProjects() {
+    let inactive = [];
+    for(let project of this.projects) {
+      if(!project.active) {
+        inactive.push(project);
+      }
+    }
+    return inactive;
+  }
+
 }
