@@ -9,19 +9,9 @@
         </button>
       </div>
       <div class="modal-body">
-        <!-- Images -->
-        <div id="{{ 'modal-carousel-images-' + id }}" class="carousel" data-interval="false">
-          <div class="carousel-inner">
-            <div class="carousel-item" *ngFor="let img of images; let isFirst = first" [class.active]="isFirst">
-              <img class="d-block w-100" src="{{'../../assets/img/' + img.name }}" alt="">
-            </div>
-          </div>
-
-        </div>
-        <div class="text-center" style="padding: 5px;">
-            <a class="btn btn-outline-secondary btn-round" href="{{ '#modal-carousel-images-' + id }}" role="button" data-slide="prev" style="margin-right: 5px;"><span class="fa fa-chevron-left"></span></a>
-            <a class="btn btn-outline-secondary btn-round" href="{{ '#modal-carousel-images-' + id }}" role="button" data-slide="next"><span class="fa fa-chevron-right"></span></a>
-        </div>
+      <div *ngFor="let img of images">
+        <img class="d-block w-100" src="{{'../../assets/img/' + img.name }}" alt="">
+        <hr>
       </div>
     </div>
   </div>

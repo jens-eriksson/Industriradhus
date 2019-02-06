@@ -18,9 +18,8 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8">
-      <div class="card max-height">
-
+    <div class="col-md-6">
+      <div class="card">
         <div class="card-body">
           <h3>Vad är industriradhus?</h3>
           <p>
@@ -38,7 +37,14 @@
             vilket innebär att försäkringskostnaden för den enskilde lokalinnehavaren blir lägre. Bostadsrättsföreningen
             borgar för ett långsiktigt tryggt ägande.
           </p>
+        </div>
 
+      </div>
+    </div>
+    <div class="col-md-6">
+
+      <div class="card">
+        <div class="card-body">
           <h3>Flexibla lösningar</h3>
           <p>
             Vi jobbar med ett flexibelt modulsystem där du som företagare kan anpasssa din lokal efter era behov. Ni bestämmer er för
@@ -54,33 +60,39 @@
           </p>
           <img src="../../assets/img/flexibla-losningar.png" width="100%" />
 
-
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <div class="card-body">
-          <h4>Kommande projekt</h4>
-          <div *ngFor="let project of projects">
-            <div *ngIf="!project.active" style="margin-bottom: 20px;">
-              <h5>{{ project.name }}</h5>
-              <h6 class="mb-2 text-muted">{{ project.city }}</h6>
-              <hr>
-              <p>
-                <b>Försäljningsstart</b>
-                <br>{{ project.salesLaunch }}</p>
-              <a *ngIf="project.active" [routerLink]="['/projekt', project.key]" class="btn btn-outline-success">Läs mer...</a>
-              <a *ngIf="!project.active" [routerLink]="['/kontakt']" class="btn btn-outline-success">Kontakt...</a>
-            </div>
-            <br>
-          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="row">
+    <div class="col-md-12">
 
+
+      <div class="card">
+        <div class="card-body">
+          <h4>Kommande projekt</h4>
+          <hr>
+          <div class="row text-center">
+            <div class="col" *ngFor="let project of projects">
+              <div class="card" *ngIf="!project.active">
+                <div class="card-body">
+                  <h5>{{ project.name }}</h5>
+                  <h6 class="mb-2 text-muted">{{ project.city }}</h6>
+                  <hr>
+                  <p>
+                    <b>Försäljningsstart</b>
+                    <br>{{ project.salesLaunch }}</p>
+                  <a *ngIf="project.active" [routerLink]="['/projekt', project.key]" class="btn btn-outline-success">Läs
+                    mer...</a>
+                  <a *ngIf="!project.active" [routerLink]="['/kontakt']" class="btn btn-outline-success">Kontakt...</a>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <app-footer></app-footer>
