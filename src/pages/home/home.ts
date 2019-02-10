@@ -32,4 +32,13 @@ export class HomePage implements OnInit {
     return inactive;
   }
 
+  getActiveProjects() {
+    let active = [];
+    for(let project of this.projects) {
+      if(project.active) {
+        active.push(project);
+      }
+    }
+    return active;
+  }
 }

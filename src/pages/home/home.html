@@ -1,23 +1,27 @@
 <div class="container">
   <app-header></app-header>
+
   <div class="row">
-    <div class="col-md-12" *ngFor="let project of projects">
-      <div class="card" *ngIf="project.active" style="margin-bottom: 20px;">
-        <img src="{{ '../../assets/img/' + project.images[0].name }}" class="card-img-top">
+    <div class="col-md-6">
+      <div class="card max-height" *ngFor="let project of getActiveProjects()" style="margin-bottom: 20px;">
+        <img src="{{ '../../assets/img/' + project.images[0].name }}" [routerLink]="['/projekt', project.key]" class="card-img-top">
         <div class="card-body">
           <h3 class="card-title">{{ project.name }}</h3>
           <h6 class="card-subtitle mb-2 text-muted">{{ project.city }}</h6>
           <hr>
           <p class="card-text">
             <b>Försäljningsstart</b>
-            <br>{{ project.salesLaunch }}</p>
-          <a *ngIf="project.active" [routerLink]="['/projekt', project.key]" class="btn btn-outline-success">Läs mer...</a>
-          <a *ngIf="!project.active" [routerLink]="['/kontakt']" class="btn btn-outline-success">Kontakt...</a>
+            <br>{{ project.salesLaunch }}
+          </p>
+          <p class="text-right">
+              <a *ngIf="project.active" [routerLink]="['/projekt', project.key]" class="btn btn-outline-success">Läs mer...</a>
+              <a *ngIf="!project.active" [routerLink]="['/kontakt']" class="btn btn-outline-success">Kontakt...</a>
+          </p>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
+
+
     <div class="col-md-6">
       <div class="card max-height">
         <div class="card-body">
@@ -41,9 +45,37 @@
 
       </div>
     </div>
+  </div>
+  <div class="row">
     <div class="col-md-6">
+      <div class="card max-height">
+        <div class="card-body">
+          <h4>Kommande projekt</h4>
+          <br>
+          <div *ngFor="let project of getInactiveProjects()">
+            <div class="row">
+              <div class="col">
+                  <h5>{{ project.name }}</h5>
+            <h6 class="mb-2 text-muted">{{ project.city }}</h6>
+              </div>
+              <div class="col">
+                  <p>
+                      <b>Försäljningsstart</b>
+                      <br>{{ project.salesLaunch }}
+                    </p>
+                </div>
+            </div>
+            <hr>
+          </div>
+          <p class="text-right">
+            <a [routerLink]="['/kontakt']" class="btn btn-outline-success">Kontakt...</a>
+          </p>
+        </div>
+      </div>
 
-      <div class="card">
+    </div>
+    <div class="col-md-6">
+      <div class="card max-height">
         <div class="card-body">
           <h3>Flexibla lösningar</h3>
           <p>
@@ -55,44 +87,17 @@
             Vi kan skapa rena lagringsytor, verkstäder med kontorsdel eller butikslokaler. Möjligheterna är många och det är era behov
             som avgör.
           </p>
-          <p>
+
+          <img src="../../assets/img/flexibla-losningar.png" width="100%" />
+          <hr>
+          <p class="text-right">
             <a [routerLink]="['/losningar']" class="btn btn-outline-success">Läs mer...</a>
           </p>
-          <img src="../../assets/img/flexibla-losningar.png" width="100%" />
-
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-
-
-      <div class="card">
-        <div class="card-body">
-          <h4>Kommande projekt</h4>
-          <hr>
-          <div class="row">
-            <div class="col" *ngFor="let project of getInactiveProjects()">
-              <div class="card" *ngIf="!project.active">
-                <div class="card-body">
-                  <h5>{{ project.name }}</h5>
-                  <h6 class="mb-2 text-muted">{{ project.city }}</h6>
-                  <hr>
-                  <p>
-                    <b>Försäljningsstart</b>
-                    <br>{{ project.salesLaunch }}</p>
-                  <a *ngIf="project.active" [routerLink]="['/projekt', project.key]" class="btn btn-outline-success">Läs
-                    mer...</a>
-                  <a *ngIf="!project.active" [routerLink]="['/kontakt']" class="btn btn-outline-success">Kontakt...</a>
-                  <br>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
 <app-footer></app-footer>

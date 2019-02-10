@@ -53,7 +53,34 @@
       <div class="card">
         <div class="card-body">
           <h3>Till salu</h3>
-          <table class="table">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col" *ngFor="let unit of units">
+      <div class="card max-height text-center" style="width: 255px; margin: auto">
+          <img src="{{ '../../assets/img/' + unit.images[0].name }}" [routerLink]="['/enhet', unit.key]" class="card-img-top" style="border-bottom: solid 1px gainsboro">
+          <div class="card-body">
+            <a href="#" [routerLink]="['/enhet', unit.key]"><h3 class="card-title">{{ unit.name }}</h3> </a>
+            <h6 class="card-subtitle mb-2 text-muted"><b>Storlek </b>{{ unit.size }} kvm</h6>
+            <hr>
+            <p class="card-text">
+              <b>Pris</b>
+              <br>{{ unit.price | currency:'SEK':'':'1.0-0'}} kr
+            </p>
+            <p class="card-text">
+              <b>Avgift</b>
+              <br>{{ unit.rent | currency:'SEK':'':'1.0-0' }} kr/mån
+            </p>
+            <br>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<!--
+  <table class="table">
             <thead>
               <tr>
                 <th scope="col"></th>
@@ -73,12 +100,7 @@
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
+-->
 
   <div class="row">
     <div class="col-md-12">
