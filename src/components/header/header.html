@@ -8,7 +8,7 @@
         <div class="dropdown mt-2" *ngIf="!isAnonymous">
           <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <img class="photo" [src]="getPhotoUrl()" />
-            {{ getName() }}
+            <span class="mx-1 d-none d-sm-inline">{{ getName() }}</span>
           </button>
           <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="#" (click)="signOut()">Logga ut</a>
