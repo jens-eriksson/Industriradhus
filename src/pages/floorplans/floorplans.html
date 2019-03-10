@@ -4,9 +4,10 @@
     <div class="col-md-12">
       <div class="card max-height">
 
-        <div class="card-body">
+        <div class="card-body text-center">
           <div class="card-title">
-            <h1>Flexibla lösningar</h1>
+            <h1>Moduler</h1>
+            <hr>
           </div>
           <ul class="nav justify-content-center" id="tabs" role="tablist">
             <li class="nav-item" *ngFor="let floorplan of floorplans; let isFirst = first">
@@ -28,9 +29,10 @@
         <div class="col-md-9">
           <div class="card max-height">
             <div class="card-body">
-              <h5 class="card-title">{{ floorplan.name }}</h5>
-              <hr>
-
+              <div class="text-center">
+                  <h3 class="card-title">{{ floorplan.name }}</h3>
+                  <hr>
+              </div>
               <div id="{{ 'carousel-images-' + floorplan.key }}" class="carousel" data-interval="false" style="margin: 30px -20px 0px -20px;">
                 <div class="carousel-inner">
                   <div class="carousel-item" *ngFor="let img of floorplan.images; let isFirst = first" [class.active]="isFirst">
@@ -52,7 +54,7 @@
         <div class="col-md-3">
           <div class="card max-height">
             <div class="card-body">
-              <h5 class="card-title">Fakta</h5>
+              <h3 class="card-title">Fakta</h3>
               <hr>
               <p class="card-text" *ngFor="let feature of floorplan.features">
                 <b>{{ feature.name }}</b>

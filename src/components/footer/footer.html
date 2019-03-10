@@ -17,6 +17,9 @@
            <li>
              <a [routerLink]="['/kontakt']">om oss / kontakt</a>
            </li>
+           <li *ngIf="isAnonymous">
+            <a [routerLink]="['/sign-in']" [queryParams]="{redirectTo: redirectTo}">logga in</a>
+          </li>
          </ul>
         
 

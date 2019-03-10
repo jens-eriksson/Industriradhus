@@ -1,6 +1,6 @@
 import { AuthProvider } from './../../providers/auth';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -10,21 +10,33 @@ import { Router } from '@angular/router';
 export class SignInPage implements OnInit {
 
   message: string;
+  redirectTo: string;
 
   constructor(
     private authProvider: AuthProvider,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
+    this.redirectTo = this.route.snapshot.queryParams.redirectTo;
+    if(!this.redirectTo) {
+      this.redirectTo = "start";
+    }
   }
 
   ngOnInit() {
-    console.log("SignInPage onInit");
+    if(this.authProvider.isAuthenticated() == false) {
+      this.authProvider.signInAnonymous().then(user => {
+        if (this.authProvider.isAuthenticated()) {
+          this.router.navigate([this.redirectTo]);
+        }
+      });
+    }
   }
 
   signInWithGoogle() {
     this.authProvider.signInWithGoogle().then(user => {
-      if (this.authProvider.isAuthorized()) {
-        this.router.navigate(["home"]);
+      if (this.authProvider.isAuthenticated()) {
+        this.router.navigate([this.redirectTo]);
       }
       else {
         console.log("signInWithGoogle faild");
@@ -36,8 +48,8 @@ export class SignInPage implements OnInit {
 
   signInWithFacebook() {
     this.authProvider.signInWithFacebook().then(user => {
-      if (this.authProvider.isAuthorized()) {
-        this.router.navigate(["home"]);
+      if (this.authProvider.isAuthenticated()) {
+        this.router.navigate([this.redirectTo]);
       }
       else {
         this.authProvider.signOut();
@@ -47,6 +59,6 @@ export class SignInPage implements OnInit {
   }
 
   navToAbout() {
-    this.router.navigate(["about"]);
+    this.router.navigate(["omoss"]);
   }
 }

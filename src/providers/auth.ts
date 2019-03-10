@@ -27,7 +27,7 @@ const fbLoginOptions: LoginOpt = {
 
 @Injectable()
 export class AuthProvider {
-    public currentUser: SocialUser;
+    public currentUser;
 
     constructor(
         private authService: AuthService,
@@ -37,6 +37,23 @@ export class AuthProvider {
 
     initilize() {
         this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    }
+
+    async signInAnonymous(): Promise<any> {
+        let path = "auth/anonymous";
+        try {
+            let jwt = await this.httpClient.get<string>(environment.apiBaseUrl + path).toPromise();
+            this.currentUser = {
+                name: "anonymous",
+                jwt: jwt
+            }
+        }
+        catch(err) {
+            this.currentUser = null;
+        }
+
+        localStorage.setItem("currentUser", JSON.stringify(this.currentUser));
+        return this.currentUser;
     }
 
     async signInWithGoogle(): Promise<SocialUser> {
@@ -84,15 +101,15 @@ export class AuthProvider {
     }
 
     isAuthenticated(): boolean {
-        if (this.currentUser) {
+        if (this.currentUser && this.currentUser.jwt) {
             return true;
         }
 
         return false;
     }
 
-    isAuthorized() {
-        if(this.currentUser && this.currentUser["jwt"]) {
+    isAnonymous() {
+        if(this.currentUser && this.currentUser.name == "anonymous") {
             return true;
         }
         else {

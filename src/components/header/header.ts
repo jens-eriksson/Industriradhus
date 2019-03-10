@@ -9,10 +9,14 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+  isAnonymous: Boolean;
+
   constructor(
     public authProvider: AuthProvider,
     private router: Router
-  ) { }
+  ) { 
+    this.isAnonymous = this.authProvider.isAnonymous();
+  }
 
   ngOnInit() {
   }

@@ -7,6 +7,5 @@
 }
 
 .sold {
-    text-decoration: line-through;
-    background-color: rgb(241, 241, 241);
+    filter: blur(3px);
 }

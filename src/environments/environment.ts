@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://industriradhus-api.azurewebsites.net/'
+  apiBaseUrl: 'http://localhost:1337/' //'https://industriradhus-api.azurewebsites.net/'
 };
 
 /*

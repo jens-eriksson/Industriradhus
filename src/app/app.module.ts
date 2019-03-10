@@ -51,7 +51,7 @@ import { TokenInterceptor } from '../core/token-interceptor';
       { path: 'sign-in', component: SignInPage},
       { path: 'start', component: HomePage, canActivate: [AccessGuardService]},
       { path: 'kontakt', component: AboutPage },
-      { path: 'losningar', component: FloorplansPage },
+      { path: 'moduler', component: FloorplansPage },
       { path: 'projekt/:id', component: ProjectPage, canActivate: [AccessGuardService]},
       { path: 'enhet/:id', component: UnitPage, canActivate: [AccessGuardService]},
       { path: '', redirectTo: 'start', pathMatch: 'full'},

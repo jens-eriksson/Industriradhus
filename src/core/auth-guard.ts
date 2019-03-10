@@ -11,9 +11,8 @@ export class AccessGuardService implements CanActivate {
     ) { }
     canActivate(route: ActivatedRouteSnapshot): boolean {
         let authenticated = this.authProvider.isAuthenticated();
-        let authorized = this.authProvider.isAuthorized();
 
-        if (authenticated && authorized) {
+        if (authenticated) {
             return true;
         }
         else {

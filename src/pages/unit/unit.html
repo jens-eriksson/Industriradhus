@@ -55,7 +55,7 @@
             </tr>
             <tr>
               <th>Avgift</th>
-              <td>{{ unit.rent | currency:'SEK':'':'1.0-0' }} kr</td>
+              <td>{{ unit.rent | currency:'SEK':'':'1.0-0' }} kr/mån</td>
             </tr>
             <tr>
               <th>Storlek</th>
@@ -77,13 +77,12 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" *ngIf="unit.documents">
           <div class="card-body">
             <h5 class="card-title">Dokument</h5>
             <hr>
             <ul style="list-style-type: none; padding: 0;">
-              <li><a href="../../assets/doc/stadgar-brf.pdf" target="_blank"><span class="far fa-file-pdf"></span> Stadgar BRF</a></li>
-              <li><a><span class="far fa-file-pdf"></span> Förhandsavtal</a></li>
+              <li *ngFor="let document of unit.documents"><a href="{{'../../assets/doc/' + document.name }}" target="_blank"><span class="far fa-file-pdf"></span>  {{ document.description }}</a></li>
             </ul>
           </div>
         </div>

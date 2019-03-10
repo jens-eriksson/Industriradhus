@@ -20,12 +20,11 @@
         </div>
       </div>
     </div>
-
-
     <div class="col-md-6">
       <div class="card max-height">
         <div class="card-body">
           <h3>Vad är industriradhus?</h3>
+          <hr>
           <p>
             Industriradhus är en ny typ av lösning för små och medelstora företag som vill äga sina egna lokaler men som på egen hand
             inte vill investera i uppförandet av en industribyggnad. Istället kan ett kluster av företag gå samman och bygga
@@ -50,8 +49,8 @@
     <div class="col-md-6">
       <div class="card max-height">
         <div class="card-body">
-          <h4>Kommande projekt</h4>
-          <br>
+          <h3>Kommande projekt</h3>
+          <hr>
           <div *ngFor="let project of getInactiveProjects()">
             <div class="row">
               <div class="col">
@@ -77,7 +76,8 @@
     <div class="col-md-6">
       <div class="card max-height">
         <div class="card-body">
-          <h3>Flexibla lösningar</h3>
+          <h3>Flexibelt modulsystem</h3>
+          <hr>
           <p>
             Vi jobbar med ett flexibelt modulsystem där du som företagare kan anpasssa din lokal efter era behov. Ni bestämmer er för
             hur många fack ni behöver i byggnaden och kan sedan inreda dem som ni vill.
@@ -91,7 +91,7 @@
           <img src="../../assets/img/flexibla-losningar.png" width="100%" />
           <hr>
           <p class="text-right">
-            <a [routerLink]="['/losningar']" class="btn btn-outline-success">Läs mer...</a>
+            <a [routerLink]="['/moduler']" class="btn btn-outline-success">Läs mer...</a>
           </p>
         </div>
       </div>

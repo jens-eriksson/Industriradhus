@@ -9,77 +9,73 @@
         <div id="carousel-images" class="carousel" data-interval="false">
           <div class="carousel-inner">
             <div class="carousel-item" *ngFor="let img of project.images; let isFirst = first" [class.active]="isFirst">
-              <img class="d-block w-100" src="{{'../../assets/img/' + img.name}}" data-toggle="modal"
-                [attr.data-target]="'#modal-images-' + project.key" />
+              <img class="d-block w-100" src="{{'../../assets/img/' + img.name}}" data-toggle="modal" [attr.data-target]="'#modal-images-' + project.key"
+              />
             </div>
           </div>
         </div>
         <div class="text-center" style="padding: 5px;">
           <a class="btn btn-outline-secondary btn-round" href="#carousel-images" role="button" data-slide="prev" style="margin-right: 5px;"><span
               class="fa fa-chevron-left"></span></a>
-          <a class="btn btn-outline-secondary btn-round" href="#carousel-images" role="button" data-slide="next"><span
-              class="fa fa-chevron-right"></span></a>
+          <a class="btn btn-outline-secondary btn-round" href="#carousel-images" role="button" data-slide="next"><span class="fa fa-chevron-right"></span></a>
         </div>
         <div class="text-center m-2">
           <a class="btn btn-outline-secondary" href="#" data-toggle="modal" [attr.data-target]="'#modal-images-' + project.key">Visa
-            alla</a>
+            alla
+          </a>
         </div>
         <div class="card-body">
           <hr>
-            <span [innerHtml]="project.description"></span>
-            <a class="btn btn-outline-success" [routerLink]="['/kontakt']">Kontakt...</a>
+          <span [innerHtml]="project.description"></span>
+          <a class="btn btn-outline-success" [routerLink]="['/kontakt']">Kontakt...</a>
         </div>
       </div>
-      
-
     </div>
     <div class="col-md-3">
-        <div class="card max-height">
-            <div class="card-body">
-                <h5 class="card-title">Faktaruta</h5>
-                <hr>
-              <p class="card-text" *ngFor="let info of project.summary">
-                <b>{{ info.name }}</b>
-                <br>{{ info.value }}
-              </p>
-            </div>
-          </div>
+      <div class="card max-height">
+        <div class="card-body">
+          <h5 class="card-title">Faktaruta</h5>
+          <hr>
+          <p class="card-text" *ngFor="let info of project.summary">
+            <b>{{ info.name }}</b>
+            <br>{{ info.value }}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
-
-
   <div class="row" *ngIf="units">
     <div class="col-md-12">
       <div class="card">
-        <div class="card-body">
-          <h3>Till salu</h3>
+        <div class="card-body text-center">
+          <h1>Till salu</h1>
         </div>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col" *ngFor="let unit of units">
-      <div class="card max-height text-center" style="width: 255px; margin: auto">
-          <img src="{{ '../../assets/img/' + unit.images[0].name }}" [routerLink]="['/enhet', unit.key]" class="card-img-top" style="border-bottom: solid 1px gainsboro">
-          <div class="card-body">
-            <a href="#" [routerLink]="['/enhet', unit.key]"><h3 class="card-title">{{ unit.name }}</h3> </a>
-            <h6 class="card-subtitle mb-2 text-muted"><b>Storlek </b>{{ unit.size }} kvm</h6>
-            <hr>
-            <p class="card-text">
-              <b>Pris</b>
-              <br>{{ unit.price | currency:'SEK':'':'1.0-0'}} kr
-            </p>
-            <p class="card-text">
-              <b>Avgift</b>
-              <br>{{ unit.rent | currency:'SEK':'':'1.0-0' }} kr/mån
-            </p>
-            <br>
-          </div>
+      <div class="card max-height text-center" style="width: 198px; margin: auto" [ngClass]="{'sold' : unit.sold}">
+        <img src="{{ '../../assets/img/' + unit.images[0].name }}" [routerLink]="['/enhet', unit.key]" class="card-img-top" style="border-bottom: solid 1px gainsboro">
+        <div class="card-body">
+          <a href="#" [routerLink]="['/enhet', unit.key]"><h3 class="card-title">{{ unit.name }}</h3> </a>
+          <h6 class="card-subtitle mb-2 text-muted"><b>Storlek </b>{{ unit.size }} kvm</h6>
+          <hr>
+          <p class="card-text">
+            <b>Pris</b>
+            <br>{{ unit.price | currency:'SEK':'':'1.0-0'}} kr
+          </p>
+          <p class="card-text">
+            <b>Avgift</b>
+            <br>{{ unit.rent | currency:'SEK':'':'1.0-0' }} kr/mån
+          </p>
+          <br>
+        </div>
       </div>
     </div>
   </div>
 
-<!--
+  <!--
   <table class="table">
             <thead>
               <tr>
