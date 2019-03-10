@@ -9,3 +9,8 @@
 .sold {
     filter: blur(3px);
 }
+
+.unit {
+    min-width: 198px; 
+    margin: auto
+}

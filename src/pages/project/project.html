@@ -55,7 +55,7 @@
   </div>
   <div class="row">
     <div class="col" *ngFor="let unit of units">
-      <div class="card max-height text-center" style="width: 198px; margin: auto" [ngClass]="{'sold' : unit.sold}">
+      <div class="card max-height text-center unit" [ngClass]="{'sold' : unit.sold}">
         <img src="{{ '../../assets/img/' + unit.images[0].name }}" [routerLink]="['/enhet', unit.key]" class="card-img-top" style="border-bottom: solid 1px gainsboro">
         <div class="card-body">
           <a href="#" [routerLink]="['/enhet', unit.key]"><h3 class="card-title">{{ unit.name }}</h3> </a>
