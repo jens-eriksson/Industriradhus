@@ -14,12 +14,37 @@
             <br>{{ project.salesLaunch }}
           </p>
           <p class="text-right">
-              <a *ngIf="project.active" [routerLink]="['/projekt', project.key]" class="btn btn-outline-success">Läs mer...</a>
-              <a *ngIf="!project.active" [routerLink]="['/kontakt']" class="btn btn-outline-success">Kontakt...</a>
+            <a *ngIf="project.active" [routerLink]="['/projekt', project.key]" class="btn btn-outline-success">Läs mer...</a>
+            <a *ngIf="!project.active" [routerLink]="['/kontakt']" class="btn btn-outline-success">Kontakt...</a>
           </p>
         </div>
       </div>
     </div>
+    <div class="col-md-6">
+      <div class="card max-height">
+        <div class="card-body">
+          <h3>Flexibelt modulsystem</h3>
+          <hr>
+          <p>
+            Vi jobbar med ett flexibelt modulsystem där ni som företagare kan anpasssa lokalen efter era behov. Ni bestämmer er för
+            hur många fack ni behöver i byggnaden och kan sedan inreda dem som ni vill.
+          </p>
+          <p>
+            Vi kan skapa rena lagringsytor, verkstäder med kontorsdel eller butikslokaler. Möjligheterna är många och det är era behov
+            som avgör.
+          </p>
+
+          <img src="../../assets/img/flexibla-losningar.png" width="100%" />
+          <hr>
+          <p class="text-right">
+            <a [routerLink]="['/moduler']" class="btn btn-outline-success">Läs mer...</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-6">
       <div class="card max-height">
         <div class="card-body">
@@ -41,11 +66,8 @@
             borgar för ett långsiktigt tryggt ägande.
           </p>
         </div>
-
       </div>
     </div>
-  </div>
-  <div class="row">
     <div class="col-md-6">
       <div class="card max-height">
         <div class="card-body">
@@ -54,44 +76,20 @@
           <div *ngFor="let project of getInactiveProjects()">
             <div class="row">
               <div class="col">
-                  <h5>{{ project.name }}</h5>
-            <h6 class="mb-2 text-muted">{{ project.city }}</h6>
+                <h5>{{ project.name }}</h5>
+                <h6 class="mb-2 text-muted">{{ project.city }}</h6>
               </div>
               <div class="col">
-                  <p>
-                      <b>Försäljningsstart</b>
-                      <br>{{ project.salesLaunch }}
-                    </p>
-                </div>
+                <p>
+                  <b>Försäljningsstart</b>
+                  <br>{{ project.salesLaunch }}
+                </p>
+              </div>
             </div>
             <hr>
           </div>
           <p class="text-right">
             <a [routerLink]="['/kontakt']" class="btn btn-outline-success">Kontakt...</a>
-          </p>
-        </div>
-      </div>
-
-    </div>
-    <div class="col-md-6">
-      <div class="card max-height">
-        <div class="card-body">
-          <h3>Flexibelt modulsystem</h3>
-          <hr>
-          <p>
-            Vi jobbar med ett flexibelt modulsystem där du som företagare kan anpasssa din lokal efter era behov. Ni bestämmer er för
-            hur många fack ni behöver i byggnaden och kan sedan inreda dem som ni vill.
-
-          </p>
-          <p>
-            Vi kan skapa rena lagringsytor, verkstäder med kontorsdel eller butikslokaler. Möjligheterna är många och det är era behov
-            som avgör.
-          </p>
-
-          <img src="../../assets/img/flexibla-losningar.png" width="100%" />
-          <hr>
-          <p class="text-right">
-            <a [routerLink]="['/moduler']" class="btn btn-outline-success">Läs mer...</a>
           </p>
         </div>
       </div>
